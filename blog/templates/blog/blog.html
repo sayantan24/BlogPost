@@ -1,0 +1,20 @@
+{% extends 'blog/main.html' %}
+{% load static %}
+{% block content %}
+<div class="header-bar">
+    <a href="{% url 'blogs' %}">&#8592;</a>
+</div>
+<div class="card-body">
+    <div class="author-name">
+        <h3>Author: {{blog.author}}</h3>
+    </div>
+    <div class="detail">
+        <p>{{blog.content}}</p>
+    </div>
+
+    <div class="date">
+        <h5>{{blog.date}}</h5>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends 'blog/main.html' %}
+{% load static %}
+{% block content %}
+<div class="header-bar">
+    <a href="{% url 'blogs' %}">&#8592;</a>
+</div>
+<div class="card-body">
+    <div class="detail">
+        <form method="post" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="Submit"/>
+    </form>
+    </div>
+
+</div>
+{% endblock content %}

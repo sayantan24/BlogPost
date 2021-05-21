@@ -1,0 +1,41 @@
+{% extends 'blog/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <div>
+        <h1>Welcome {{request.user|title}}</h1>
+        <h3>Start recording your memories!</h3>
+    </div>
+    {% if request.user.is_authenticated %}
+    <b><a href="{% url 'logout' %}">Logout</a></b>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+
+</div>
+<div class="bloglist-wrapper">
+    {% for blog in blogs %}
+    <div class="blog-wrapper">
+        <div class="blog-title">
+            <div><b><a href="{% url 'blog' blog.id %}">{{blog.title}}</a></b></div>
+            <div class="content-title"><p>{{blog.content}}</p></div>
+            <div class="date-title"><h6>{{blog.date}}</h6></div>
+        </div>
+
+
+        <div class="control">
+            <a href="{% url 'blog-delete' blog.id %}">&#9746;</a>
+            <a href="{% url 'blog-update' blog.id %}">&#x270E;</a>
+        </div>
+
+    </div>
+
+    {% empty %}
+    <h3>No memories yet. Start Now!</h3>
+    {% endfor %}
+
+</div>
+<div class="symbol">
+    <a href="{% url 'blog-create' %}">&#10010;</a>
+</div>
+
+{% endblock content %}

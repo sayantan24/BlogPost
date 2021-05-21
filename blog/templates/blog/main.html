@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Diary</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Volkhov:ital@1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color:linear-gradient(indigo,violet);
+            font-family:'Noto Sans JP', sans-serif;
+            padding-top: 45px;
+            background-image: url({% static 'images/background.jpg' %});
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+            {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+            box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+            border-radius: 5px 5px 0 0;
+        }
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            color: #FFF;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            background: #91219E;
+            background-image:linear-gradient(indigo,violet);
+            font-family:font-family: 'Volkhov', serif;
+        }
+
+        .header-bar a {
+            color: rgb(247, 247, 247);
+            text-decoration: none;
+        }
+
+        .blog-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #FFE1FF;
+            border-top: 1px solid #dfe4ea;
+            overflow: hidden;
+            right-margin:20px;
+        }
+
+        .blog-wrapper p{
+            margin-top:10px;
+            align-items:flex-start;
+            clear:left;
+        }
+
+        .blog-title {
+
+            display: grid;
+            padding: 20px;
+            font-family: 'Balsamiq Sans', cursive;
+            font-size:30px;
+            flex-direction: column;
+
+        }
+
+        .blog-title a {
+            text-decoration: none;
+            color: #4b5156;
+            margin-left: 10px;
+        }
+        .blog-title a:hover{
+            text-decoration: underline;
+        }
+
+        .control a{
+            text-decoration: none;
+            color:#379683;
+            font-size: 30px;
+        }
+
+        .symbol a{
+            text-decoration: none;
+            color:#379683;
+        }
+
+        .button {
+            border: 1px solid #EB796F;
+            background-color: #FAFAFA;
+            color: #EB796F;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .card-body {
+            padding: 10px;
+            text-align: center;
+            background-color:#FFE1FF;
+        }
+
+        label {
+            padding-top: 10px !important;
+            display: block;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .control{
+            justify-content:space-between;
+        }
+
+        .detail{
+            font-size:24px;
+            margin-top:10px;
+            background-color:#c9a0dc;
+            font-family:'Balsamiq Sans', cursive;
+        }
+
+        .author-name{
+            font-family:'Josefin Sans', sans-serif;
+        }
+
+        .form-wrapper{
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        .content-title{
+            font-size:20px;
+            font-family:'Josefin Sans', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+</body>
+</html>
